@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Pokedata</string>
+    <string name="Aguarde">Aguarde</string>
+    <string name="Carregando">Carregando</string>
+    <string name="ok">Ok</string>
+    <string name="internetSemConexao">Não existe conexão com a internet</string>
+    <string name="erro">Erro</string>
+    <string name="erroGenerico">Um erro ocorreu ao carregar os dados.</string>
+    <string name="erroInesperado">Um erro inesperado ocorreu.</string>
+    <string name="title_activity_menu_listagem_pokemon">MenuListagemPokemon</string>
+    <string name="link_tipos_pokemon">https://pokeapi.co/api/v2/type/</string>
+    <string name="nome">Nome:</string>
+    <string name="peso">Peso:</string>
+    <string name="altura">Altura:</string>
+    <string name="infoBasica"> Informações gerais:</string>
+    <string name="infoHabilidades"> Informações habilidades:</string>
+    <string name="infoMovimentos"> Informações movimentos:</string>
+
+</resources>

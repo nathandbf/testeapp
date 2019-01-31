@@ -1,0 +1,29 @@
+<resources>
+
+    <style name="AppTheme" parent="android:Theme.Material.Light">
+        <item name="android:actionBarStyle">@style/ActionBar</item>
+    </style>
+
+    <style name="ActionBar" parent="android:Widget.Material.Light.ActionBar.Solid">
+        <item name="android:background">@color/colorAppBar</item>
+        <item name="android:titleTextStyle">@style/TextBar</item>
+    </style>
+
+    <style name="TextBar" parent="android:style/TextAppearance.Holo.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorWhite</item>
+    </style>
+
+    <style name="NoActionBar" parent="Theme.AppCompat.Light">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="SplashScreenTheme" parent="NoActionBar" >
+        <item name ="android:windowBackground"> @drawable/splash_screen_background</item>
+        <item name="android:scaleType">fitCenter</item>
+    </style>
+
+    <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+</resources>
