@@ -13,7 +13,8 @@
     <string name="peso">Peso:</string>
     <string name="altura">Altura:</string>
     <string name="infoBasica"> Informações gerais:</string>
-    <string name="infoHabilidades"> Informações habilidades:</string>
-    <string name="infoMovimentos"> Informações movimentos:</string>
-
+    <string name="infoHabilidades"> Habilidades:</string>
+    <string name="infoMovimentos"> Movimentos:</string>
+    <string name="nenhumdadoencontrado"> Nenhum dado encontrado:</string>
+    <string name="share">Escolha o aplicativo para compartilhar:</string>
 </resources>

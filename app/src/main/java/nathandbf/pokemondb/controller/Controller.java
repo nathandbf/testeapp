@@ -123,6 +123,7 @@ public class Controller {
     }
 
     private void carregarPokemonTela(Activity activity, Pokemon pokemon) {
+        this.pokemonInTela = pokemon;
         ImageView imagemPokemon = activity.findViewById(R.id.imagemPokemon);
         Picasso.get().load(pokemon.getUrlFoto())
                 .resize(imagemPokemon.getMeasuredWidth(), imagemPokemon.getMeasuredHeight()).centerInside()
@@ -133,13 +134,37 @@ public class Controller {
         textView.setText(pokemon.getAlturaFormatada());
         textView = activity.findViewById(R.id.pesoPokemon);
         textView.setText(pokemon.getPesoFormatado());
-
+        textView = activity.findViewById(R.id.habilidades);
+        textView.setText(listagem(pokemon.getNomeHabilidades()));
+        textView = activity.findViewById(R.id.movimentos);
+        if(pokemon.getNomeMovimentos() == null || pokemon.getNomeMovimentos().size()==0){
+            textView.setText(activity.getResources().getString(R.string.nenhumdadoencontrado));
+        }
+        else{
+            textView.setText(listagem(pokemon.getNomeMovimentos()));
+        }
         Dialog.fecharDialogCarregando();
 
+    }
+
+    private String listagem(ArrayList<String> lista) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for(int i=0; i< lista.size(); i++){
+            stringBuilder.append(lista.get(i).substring(0, 1).toUpperCase());
+            stringBuilder.append(lista.get(i).substring(1).toLowerCase().replace("-"," "));
+            if(i!=lista.size()-1){
+                stringBuilder.append("\n");
+            }
+        }
+        return stringBuilder.toString();
     }
 
 
     private boolean verificarInternet(){
        return InternetValidator.verificaInternet(activity);
+    }
+
+    public Pokemon getPokemonInTela() {
+        return pokemonInTela;
     }
 }

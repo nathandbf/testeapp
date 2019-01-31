@@ -92,4 +92,8 @@ public class Pokemon {
     public void setNomeMovimentos(ArrayList<String> nomeMovimentos) {
         this.nomeMovimentos = nomeMovimentos;
     }
+
+    public String getShareMessage(){
+        return "Você sabia que o " +getNome() + " tem " + getAlturaFormatada() + " de altura, mesmo pesando " + getPesoFormatado() + ", vi isso no aplicativo do Pokedata ;)" ;
+    }
 }

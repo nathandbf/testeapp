@@ -20,9 +20,10 @@ public class DetalhesPokemon extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes_pokemon);
         String url = null;
+        Controller controller = new Controller(this);
         if(getIntent().hasExtra("urlPokemon")){
             url = getIntent().getStringExtra("urlPokemon");
-            Controller controller = new Controller(this);
+
             Dialog.dialogCarregandoSimples(this);
             AsyncTaskPokemon async = new AsyncTaskPokemon( controller, this, url);
             async.execute();
@@ -42,9 +43,9 @@ public class DetalhesPokemon extends Activity {
             public void onClick(View view) {
                 Intent sendIntent = new Intent();
                 sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, "Compartilhe este pokemon");
+                sendIntent.putExtra(Intent.EXTRA_TEXT, controller.getPokemonInTela().getShareMessage() );
                 sendIntent.setType("text/plain");
-                startActivity(Intent.createChooser(sendIntent, "pokemongo?"));
+                startActivity(Intent.createChooser(sendIntent, getApplicationContext().getString(R.string.share) ));
             }
         });
     }
